@@ -9,14 +9,20 @@
     <!-- Import do JS do Socket -->
     <script defer src="http://localhost:3030/socket.io/socket.io.js"></script>
     <!-- Import do Controller -->
-    <script defer src="C:\Users\Murilo\dev\irc\server\controller.js"></script>
+    <script defer src="controller.js"></script>
 
 </head>
 <body>
-    <div id="message-container"></div>
-    <form id="send-container">
-      <input type="text" id="message-input">
-      <button type="submit" id="send-button">Send</button>
+    <div id="room-container">
+        <% Object.keys(rooms).forEach(room => { %>
+        <div><%= room %></div>
+        <a href="/<%= room %>">Entrar</a>
+        <% }) %>
+    </div>
+    <form action="/room" method="POST">
+        <input type="text" name="room" required>
+        <button type="submit">Criar Nova Sala</button>
     </form>
+
 </body>
 </html>
