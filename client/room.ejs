@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>IRC Chat</title>
+  <title id="room-container">IRC Chat - Room</title>
   <script>
     const roomName = "<%= roomName %>"
   </script>
@@ -17,17 +18,21 @@
       display: flex;
       justify-content: center;
     }
+
     #message-container {
       width: 80%;
       max-width: 1200px;
     }
+
     #message-container div {
       background-color: #CCC;
       padding: 5px;
     }
+
     #message-container div:nth-child(2n) {
       background-color: #FFF;
     }
+
     #send-container {
       position: fixed;
       padding-bottom: 30px;
@@ -37,16 +42,26 @@
       width: 80%;
       display: flex;
     }
+
     #message-input {
       flex-grow: 1;
     }
   </style>
 </head>
+
 <body>
-  <div id="message-container"></div>
+  <div id="message-container" style="margin-top: 5px;"></div>
+  <a href="/" style="margin-top: 5px; margin-left: 2px; padding: 4px;">
+    <button class="button" type="submit">
+      Voltar
+    </button>
+  </a>
+
   <form id="send-container">
     <input type="text" id="message-input">
     <button type="submit" id="send-button">Enviar</button>
+    <button type="reset">Limpar</button>
   </form>
 </body>
+
 </html>
