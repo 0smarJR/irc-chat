@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const server = require('http').Server(app)
 const io = require('socket.io')(server)
+const PORT = process.env.PORT || 3030
 
 app.set('views', './client') //Definindo pasta com as paginas usadas
 app.set('view engine', 'ejs') //Definindo arquivos de pagina como .ejs em vez de .html
@@ -36,7 +37,9 @@ app.get('/:room', (req, res) => {
     res.render('room', { roomName: req.params.room})
 })
 
-server.listen(3030)
+server.listen(PORT, ()=>{
+  console.log("Connected to port:" + PORT);
+})
 
 // Banco de dados
 
