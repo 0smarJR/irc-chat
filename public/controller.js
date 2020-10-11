@@ -1,5 +1,5 @@
 // Local no qual o servidor está hospedado
-const socket = io('https://irc-chat-ceub.herokuapp.com');
+const socket = io();
 
 // Pegando elementos do HTML
 const messageForm = document.getElementById('send-container');
