@@ -36,7 +36,7 @@ app.get('/:room', (req, res) => {
     res.render('room', { roomName: req.params.room})
 })
 
-server.listen(process.env.PORT || 3030)
+server.listen(3030)
 
 // Banco de dados
 
